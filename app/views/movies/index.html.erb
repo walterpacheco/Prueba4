@@ -1,0 +1,37 @@
+<h1>index</h1>
+
+<div class="row">
+    <% @movies.each do |movie| %>
+        <div class="col-lg-3">
+        <%= movie.name %>
+        <%= movie.year %>
+        <%= movie.favorite %>
+        <%= link_to 'show', movie_path(movie) %>
+        
+        <%= link_to 'edit',  movie_edit_path(movie) %> 
+        <%= link_to 'delete', movie, method: :delete %>
+        <i class="fa fa-check" aria-hidden="true"></i>
+
+        </div>
+        
+
+    <% end %>
+
+</div>
+<br>
+
+
+<div class="d-flex  ">
+    <div class="border border-primary">
+        <a href="movies/list"><i class="fa fa-github" aria-hidden="true"></i>
+</a>
+
+    </div>
+    <div class="border border-primary">
+        <a href="movies/new"><i class="fa fa-rebel" aria-hidden="true"></i></a>
+    </div>
+        
+        
+</div>
+
+

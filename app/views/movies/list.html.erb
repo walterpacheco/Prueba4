@@ -1,0 +1,43 @@
+<h1>listar</h1>
+
+<div class="row">
+    <div class="col-lg-4">
+        <h4>FAVORITO</h4>
+        <% @movies.each do |movie| %>
+            <%if movie.favorite %>
+            <div class="col-lg-auto">
+                
+                <%= movie.name %>
+                <%= movie.year %>
+                <%= movie.favorite %>
+            </div>
+    
+            <% end %>
+    
+        <% end %>
+    </div>
+
+    <div class="col-lg-4">
+        <h4>NO FAVORITO</h4>
+        <% @movies.each do |movie| %>
+        <%if !movie.favorite %>
+        <div class="col-lg-auto">
+            
+            <%= movie.name %>
+            <%= movie.year %>
+            <%= movie.favorite %>
+        </div>
+    
+        <% end %>
+    
+        <% end %>
+    </div>
+
+
+</div>
+
+
+
+
+
+<%= link_to 'back', movies_path %>
